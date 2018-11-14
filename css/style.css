@@ -1,0 +1,4 @@
+#menu_home{
+    display: flex;
+    flex-direction: column;
+}
