@@ -4,19 +4,26 @@ include ("../database/connexion.php");
 
 
 $to = $_POST['to'];
+
+$destinataire=$connexion->query("SELECT login from users WHERE email like '$to' ");
+$destinataire->setFetchMode(PDO::FETCH_OBJ);
+
+foreach($destinataire as $row){
+  $loginDest=$row->login;
+}
+
+$stmt = $connexion->prepare('INSERT INTO inmail (sender,recipient,objet,msg) VALUES (:sender, :recipient, :objet, :msg)');
+ 
+$loginExp = $_SESSION['login'];
 $objet = $_POST['about'];
 $msg = $_POST['msg'];
-$loginDest;
+$stmt->bindValue(':sender', $loginExp,PDO::PARAM_INT);
+$stmt->bindValue(':recipient', $loginDest,PDO::PARAM_INT);
+$stmt->bindValue(':objet', $objet,PDO::PARAM_STR);
+$stmt->bindValue(':msg', $msg,PDO::PARAM_STR);
+$stmt->execute(); 
 
-$destinataire=$connexion->query("SELECT DISTINCT login from users WHERE email like $to");
-
-foreach($resultats as $row){
-          $loginDest=$row->login;
-  }
-
-  $connexion->exec("INSERT INTO inmail (lu,sender,recipient,objet,msg) VALUES (0,$_SESSION['login'],$loginDest,'$objet','$msg')");  
-
-  header("Location: ../accueil/accueil.php");
+header("Location: ../accueil/accueil.php");
 
 
 
