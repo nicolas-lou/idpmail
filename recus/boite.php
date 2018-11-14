@@ -29,7 +29,7 @@ include ("../database/connexion.php");
             echo "<a href='/recus/msgs.php?id={$row->idmail}'>{$row->prenom} {$row->nom} {$row->objet}</a>";
           }        
         ?>
-        <a href="/recus/msgs.php">Exemple de ligne de mail recu</a>
+        <a href="/recus/msgs.php">12xemple de ligne de mail recu</a>
         <a href="/recus/msgs.php">Exemple de ligne de mail recu</a>
         <a href="/recus/msgs.php">Exemple de ligne de mail recu</a>
         <a href="/recus/msgs.php">Exemple de ligne de mail recu</a>
