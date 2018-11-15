@@ -16,7 +16,7 @@ include ("../database/connexion.php");
     <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
     <div id="liens_nav_boite">
         <p><a href="/accueil/accueil.php">Accueil</a></p>
-        <p><a href="/">Deconnexion</a></p>
+        <p><a href="../signup/deco.php">Deconnexion</a></p>
     </div>
     <fieldset> 
     <legend>Boite de reception</legend>    

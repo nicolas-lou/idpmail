@@ -37,7 +37,7 @@ $recus= $row[0]->test;
     <a href="/recus/boite.php">Boite de reception (<?php echo $nonlus ?>)</a>
     <a href="/recus/envoye.php">Messages envoyés (<?php echo $recus ?>)</a>
     <a href="/find/find.php">Recherche de mail</a>
-    <a href="#">Deconnexion</a>
+    <a href="../signup/deco.php">Deconnexion</a>
 
 
 

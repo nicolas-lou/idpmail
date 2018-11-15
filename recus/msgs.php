@@ -19,7 +19,7 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
 <div id="liens_nav_boite">
  <p><a href="/accueil/accueil.php">Accueil</a></p>
  <p><a href="/recus/boite.php">Boite de récéption</a></p>
- <p><a href="/">Deconnexion</a></p>
+ <p><a href="../signup/deco.php">Deconnexion</a></p>
  </div>
  <div id="msgs_container">
  <?php include("/mail.php"); ?>
