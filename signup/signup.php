@@ -21,27 +21,27 @@
    <div class="form-group">
    <legend>Sign Up</legend>
    <label for="nom">Nom :</label>
-    <input type="text" name="nom" id="nom" />
+    <input type="text" name="nom" id="nom" required />
     </div>
     <div class="form-group">    
     <label for="prenom">Prénom :</label>
-    <input type="text" name="prenom" id="prenom" />
+    <input type="text" name="prenom" id="prenom" required />
     </div>
     <div class="form-group">
     <label for="email">E-mail :</label>
-    <input type="email" name="email" id="email" />
+    <input type="email" name="email" id="email" required />
     </div>
     <div class="form-group">
     <label for="phone">Numéro de téléphone :</label>
-    <input type="number" name="phone" id="phone" />
+    <input type="number" name="phone" id="phone" max="10" required />
     </div>
     <div class="form-group">
     <label for="login">Login :</label>
-    <input type="text" name="login" id="login" />
+    <input type="number" name="login" id="login" max="20" required />
     </div>
     <div class="form-group">
     <label for="pass">Mot de passe :</label>
-    <input type="password" name="pass" id="pass" />
+    <input type="password" name="pass" id="pass" required />
     </div>
     <div class="form-group">
     <input type="submit" value="Login" />

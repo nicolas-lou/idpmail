@@ -20,11 +20,11 @@
    <div class="form-group">
    <legend>Nouveau Message</legend>
    <label for="to">A :</label>   
-    <input type="text" name="to" id="to" />       
+    <input type="email" name="to" id="to" required/>       
     </div>
     <div class="form-group">
     <label for="about">Objet :</label>
-    <input type="text" name="about" id="about" />       
+    <input type="text" name="about" id="about" required />       
     </div>
     <div class="form-group"> 
     <textarea id="msg" name="msg" rows="5" cols="30">

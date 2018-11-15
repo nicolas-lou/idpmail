@@ -35,7 +35,7 @@ if(isset($_GET['q'])){
     <div id="boite_msg">
         <?php
         $login = $_SESSION['login'];
-        $mails=$connexion->query("select * from inmail WHERE (sender = 3 or recipient = 3) and objet like '%{$recherche}%'");
+        $mails=$connexion->query("select * from inmail WHERE (sender = $login or recipient = $login) and objet like '%{$recherche}%'");
         $mails->setFetchMode(PDO::FETCH_OBJ);        
         foreach($mails as $row){
             if($row->sender==$login){

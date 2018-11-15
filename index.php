@@ -27,11 +27,11 @@ session_start();
                 <div class="form-group">
                     <legend>Login</legend>
                     <label for="login">Login :</label>
-                    <input type="text" name="login" id="login" />
+                    <input type="number" name="login" id="login" required />
                 </div>
                 <div class="form-group">
                     <label for="pass">Mot de passe :</label>
-                    <input type="password" name="pass" id="pass" />
+                    <input type="password" name="pass" id="pass" required />
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Login" />
