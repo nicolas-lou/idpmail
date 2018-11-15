@@ -23,10 +23,10 @@ include ("../database/connexion.php");
     <div id="boite_msg">
         <?php
         $login = $_SESSION['login'];
-        $mails=$connexion->query("SELECT sender,prenom,nom,idmail,objet,msg,recipient from inmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
+        $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
         $mails->setFetchMode(PDO::FETCH_OBJ);        
         foreach($mails as $row){            
-            echo "<a href='/recus/msgs.php?id={$row->idmail}'>{$row->prenom} {$row->nom} {$row->objet}</a>";
+            echo "<a href='/recus/msgs.php?id={$row->idmail}'>Destinataire {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
           }        
         ?>
         <a href="/recus/msgs.php">12xemple de ligne de mail envoyé</a>

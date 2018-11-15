@@ -37,8 +37,12 @@ if(isset($_GET['q'])){
         $login = $_SESSION['login'];
         $mails=$connexion->query("select * from inmail WHERE (sender = 3 or recipient = 3) and objet like '%{$recherche}%'");
         $mails->setFetchMode(PDO::FETCH_OBJ);        
-        foreach($mails as $row){            
-            echo "<a href='/recus/msgs.php?id={$row->idmail}'>{$row->sendername} {$row->recipientname} {$row->objet}</a>";
+        foreach($mails as $row){
+            if($row->sender==$login){
+                echo "<a href='/recus/msgs.php?id={$row->idmail}'>Destinataire : {$row->recipientname} Objet: {$row->objet}</a>";
+            }else{
+                echo "<a href='/recus/msgs.php?id={$row->idmail}'>Expediteur: {$row->sendername}  Objet: {$row->objet}</a>";
+            }           
           }        
         ?>
         <a href="/recus/msgs.php">12xemple de ligne de mail envoyé</a>

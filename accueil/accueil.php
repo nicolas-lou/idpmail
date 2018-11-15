@@ -1,4 +1,21 @@
-<?php session_start() ?>
+<?php 
+session_start() ;
+include ("../database/connexion.php");
+$login = $_SESSION['login'];
+// compte nb message non lu
+$resultats=$connexion->query("SELECT COUNT(*) as test FROM inmail WHERE lu=0 and recipient={$login} ");
+$resultats->setFetchMode(PDO::FETCH_OBJ);
+$row =$resultats->fetchAll();
+$nonlus= $row[0]->test;
+// compte nb message reçus
+$resultats=$connexion->query("SELECT COUNT(*) as test FROM inmail WHERE sender={$login} ");
+$resultats->setFetchMode(PDO::FETCH_OBJ);
+$row =$resultats->fetchAll();
+$recus= $row[0]->test;
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +34,8 @@
     <h1 class="titre">Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
     <div id="menu_home">
     <a href="../newmsg/newmsg.php">Nouveau message</a>
-    <a href="/recus/boite.php">Boite de reception (nombre de messages non lus)</a>
-    <a href="/recus/envoye.php">Messages envoyés (nombre de messages envoyés)</a>
+    <a href="/recus/boite.php">Boite de reception (<?php echo $nonlus ?>)</a>
+    <a href="/recus/envoye.php">Messages envoyés (<?php echo $recus ?>)</a>
     <a href="/find/find.php">Recherche de mail</a>
     <a href="#">Deconnexion</a>
 

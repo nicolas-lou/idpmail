@@ -1,5 +1,8 @@
-<?php session_start();
+<?php 
+session_start();
+include ("../database/connexion.php");
 $id = $_GET['id'];
+$connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
 ?>
 <!DOCTYPE html>
 <html>
