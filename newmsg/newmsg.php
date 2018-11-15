@@ -9,25 +9,16 @@
         <script src="index.js"></script>
     </head>
     <body>
-        <div id="newmsg">
             <form method="post" action="/newmsg/sending.php">                
-                    <div class="form-group">
-                        <legend>Nouveau Message</legend>
-                        <label for="to">A :</label>   
-                        <input type="email" name="to" id="to" required/>       
-                    </div>
-                        <div class="form-group">
-                        <label for="about">Objet :</label>
-                        <input type="text" name="about" id="about" required />       
-                    </div>
-                    <div class="form-group"> 
-                        <textarea id="msg" name="msg" rows="20" cols="100">
-                        </textarea> 
-                    </div>           
-                    <div class="form-group"> 
-                        <input type="submit" value="Envoyer" />
-                    </div>                     
+                <legend>Nouveau Message</legend>
+                <label for="to">A :</label>   
+                <input type="email" name="to" id="to" required/>       
+                <div class="form-group">
+                <label for="about">Objet :</label>
+                <input type="text" name="about" id="about" required />       
+                <textarea id="msg" name="msg" rows="20" cols="100">
+                </textarea> 
+                <input type="submit" value="Envoyer" />
             </form>
-        </div>
     </body>
 </html>

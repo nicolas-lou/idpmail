@@ -8,12 +8,13 @@ $resultats=$connexion->query("SELECT * from users WHERE login like $login and pa
 $resultats->setFetchMode(PDO::FETCH_OBJ);
 $row =$resultats->fetchAll();
 if (count($row)!=0){
-$_SESSION['connect'] = 1;
-$_SESSION['prenom']=$row[0]->prenom;
-$_SESSION['nom']=$row[0]->nom;   
-$_SESSION['login']=$row[0]->login;
-header("Location: ../accueil/accueil.php");
+    $_SESSION['connect'] = 1;
+    $_SESSION['prenom']=$row[0]->prenom;
+    $_SESSION['nom']=$row[0]->nom;   
+    $_SESSION['login']=$row[0]->login;
+    header("Location: ../accueil/accueil.php");
 }
-else{ header('location: ./index.php');}
+else{ 
+    header('location: ./index.php');}
        
 ?>

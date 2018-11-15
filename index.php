@@ -1,7 +1,3 @@
-<?php
-session_start();
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,25 +9,14 @@ session_start();
 <script src="index.js"></script>
 </head>
     <body>
-    <div class="home">
-    <h1 class="titre">Messagerie Full Stack</h1>
-        <form method="post" action="validation.php">
-            <fieldset>
-                <div class="form-group">                
+    <h1>Messagerie Full Stack</h1>
+        <form method="post" action="validation.php"> 
                 <label for="login">Login :</label>
-                <input type="number" name="login" id="login" required />
-                </div>
-                <div class="form-group">
+                <input type="number" name="login" id="login" required />                
                 <label for="pass">Mot de passe :</label>
                 <input type="password" name="pass" id="pass" required />
-                </div>
-                <div class="form-group">
                 <input type="submit" value="Login" />
-                </div>
             <a href="/signup/signup.php">Création de compte</a>
-            </fieldset>
         </form>
-        </div>
     </body>
 </html>
-

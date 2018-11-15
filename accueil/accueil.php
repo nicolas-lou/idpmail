@@ -13,9 +13,6 @@ $resultats=$connexion->query("SELECT COUNT(*) as test FROM inmail WHERE sender={
 $resultats->setFetchMode(PDO::FETCH_OBJ);
 $row =$resultats->fetchAll();
 $recus= $row[0]->test;
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,15 +25,11 @@ $recus= $row[0]->test;
         <script src="index.js"></script>
     </head>
     <body>
-        <div class="home">
-            <h1 class="titre">Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <div id="menu_home">
-                <a href="../newmsg/newmsg.php">Nouveau message</a>
-                <a href="/recus/boite.php">Boite de reception (<?php echo $nonlus ?>)</a>
-                <a href="/recus/envoye.php">Messages envoyés (<?php echo $recus ?>)</a>
-                <a href="/find/find.php">Recherche de mail</a>
-                <a href="../signup/deco.php">Deconnexion</a> 
-            </div>
-        </div>  
+        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+        <a href="../newmsg/newmsg.php">Nouveau message</a>
+        <a href="/recus/boite.php">Boite de reception (<?php echo $nonlus ?>)</a>
+        <a href="/recus/envoye.php">Messages envoyés (<?php echo $recus ?>)</a>
+        <a href="/find/find.php">Recherche de mail</a>
+        <a href="../signup/deco.php">Deconnexion</a> 
     </body>
 </html>

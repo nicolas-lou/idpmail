@@ -18,34 +18,26 @@ $recherche = "";
     </head>
     <body>
         <h1><?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <div id="liens_nav_boite">
             <p><a href="/accueil/accueil.php">Accueil</a></p>
             <p><a href="/">Deconnexion</a></p>
-            </div>
-            <form role="search">
-            <div>
+        <form role="search">
+            <legend>Rechercher un mail</legend> 
             <input type="search" id="maRecherche" name="q"
-            placeholder="Rechercher sur le site…"
-            aria-label="Rechercher parmi le contenu du site">
+            placeholder="Recherchez dans vos mails"
+            aria-label="Rechercher parmi les emails">
             <button>Rechercher</button>
-            </div>
-            </form>
-                <fieldset> 
-                <legend>Rechercher un mail</legend>    
-                    <div id="boite_msg">
-                        <?php
-                        $login = $_SESSION['login'];
-                        $mails=$connexion->query("select * from inmail WHERE (sender = $login or recipient = $login) and objet like '%{$recherche}%'");
-                        $mails->setFetchMode(PDO::FETCH_OBJ);        
-                        foreach($mails as $row){
-                        if($row->sender==$login){
-                            echo "<a href='/recus/msgs.php?id={$row->idmail}'>Destinataire : {$row->recipientname} Objet: {$row->objet}</a>";
-                        }else{
-                            echo "<a href='/recus/msgs.php?id={$row->idmail}'>Expediteur: {$row->sendername}  Objet: {$row->objet}</a>";
-                        }           
-                        }        
-                        ?>                    
-                    </div>    
-                </fieldset>
+        </form>   
+            <?php
+            $login = $_SESSION['login'];
+            $mails=$connexion->query("select * from inmail WHERE (sender = $login or recipient = $login) and objet like '%{$recherche}%'");
+            $mails->setFetchMode(PDO::FETCH_OBJ);        
+                foreach($mails as $row){
+                    if($row->sender==$login){
+                        echo "<a href='/recus/msgs.php?id={$row->idmail}'>Destinataire : {$row->recipientname} Objet: {$row->objet}</a>";
+                    }else{
+                        echo "<a href='/recus/msgs.php?id={$row->idmail}'>Expediteur: {$row->sendername}  Objet: {$row->objet}</a>";
+                    }           
+                }        
+            ?>                    
     </body>
 </html>
