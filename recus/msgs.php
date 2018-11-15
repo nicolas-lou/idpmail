@@ -19,7 +19,7 @@ $id = $_GET['id'];
  <p><a href="/">Deconnexion</a></p>
  </div>
  <div id="msgs_container">
- <?php include("mail.php?id={$id}"); ?>
+ <?php include("/mail.php"); ?>
 </div>
 
 </body>
