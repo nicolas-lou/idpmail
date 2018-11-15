@@ -1,6 +1,11 @@
 <?php session_start();
 $id = $_GET['id'];
-
+$login = $_SESSION['login'];
+$mail=$connexion->query("SELECT sender,objet,msg from inmail WHERE idmail like $id");
+$mail->setFetchMode(PDO::FETCH_OBJ);        
+foreach($mail as $row){            
+    echo "<a href='/recus/msgs.php?id={$row->idmail}'>{$row->prenom} {$row->nom} {$row->objet}</a>";
+    }
 
 
 ?>
