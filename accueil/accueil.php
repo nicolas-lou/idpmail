@@ -1,6 +1,7 @@
 <?php 
-session_start() ;
+session_start();
 include ("../database/connexion.php");
+
 $login = $_SESSION['login'];
 // compte nb message non lu
 $resultats=$connexion->query("SELECT COUNT(*) as test FROM inmail WHERE lu=0 and recipient={$login} ");
