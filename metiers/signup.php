@@ -20,30 +20,30 @@
                     <div class="form-group">
                         <legend>Sign Up</legend>
                         <label for="nom">Nom :</label>
-                        <input type="text" name="nom" id="nom" required />
+                        <input type="text" name="nom" id="nom"  class="form-control form-control-sm"required />
                     </div>
                     <div class="form-group">    
                         <label for="prenom">Prénom :</label>
-                        <input type="text" name="prenom" id="prenom" required />
+                        <input type="text" name="prenom" id="prenom"  class="form-control form-control-sm"required />
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail :</label>
-                        <input type="email" name="email" id="email" required />
+                        <input type="email" name="email" id="email" class="form-control form-control-sm"required />
                     </div>
                     <div class="form-group">
                         <label for="phone">Numéro de téléphone :</label>
-                        <input type="number" name="phone" id="phone" required />
+                        <input type="number" name="phone" id="phone" class="form-control form-control-sm"required />
                     </div>
                     <div class="form-group">
                         <label for="login">Login :</label>
-                        <input type="number" name="login" id="login" max="20" required />
+                        <input type="number" name="login" id="login" max="20" class="form-control form-control-sm"required />
                     </div>
                     <div class="form-group">
                         <label for="pass">Mot de passe :</label>
-                        <input type="password" name="pass" id="pass" required />
+                        <input type="password" name="pass" id="pass" class="form-control form-control-sm" required />
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Login" />
+                    <button type="submit" class="btn btn-primary">S'enregistrer</button>
                     </div>      
                 </fieldset>
             </form>

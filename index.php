@@ -14,12 +14,16 @@
 </head>
     <body>
     <h1>Messagerie Full Stack</h1>
-        <form method="post" action="/metiers/validation.php"> 
+        <form method="post" action="/metiers/validation.php">
+            <div class="form-group"> 
                 <label for="login">Login :</label>
-                <input type="number" name="login" id="login" required />                
+                <input type="number" name="login" id="login" class="form-control form-control-sm" required />
+            </div>
+            <div class="form-group">                
                 <label for="pass">Mot de passe :</label>
-                <input type="password" name="pass" id="pass" required />
-                <input type="submit" value="Login" />
+                <input type="password" name="pass" id="pass" class="form-control form-control-sm" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
             <a href="/metiers/signup.php">Création de compte</a>
         </form>
     </body>

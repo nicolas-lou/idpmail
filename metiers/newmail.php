@@ -19,16 +19,22 @@ if(is_null($_SESSION['prenom'])){
         <script src="../js/index.js"></script>
     </head>
     <body>
+        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+            <p><a href="./home.php">Accueil</a></p>
+            <p><a href="../data/deco.php">Deconnexion</a></p>
             <form method="post" action="./mailsender.php">                
-                <legend>Nouveau Message</legend>
-                <label for="to">A :</label>   
-                <input type="email" name="to" id="to" required/>       
                 <div class="form-group">
-                <label for="about">Objet :</label>
-                <input type="text" name="about" id="about" required />       
-                <textarea id="msg" name="msg" rows="20" cols="50">
-                </textarea> 
-                <input type="submit" value="Envoyer" />
+                    <label for="to">A :</label>   
+                    <input type="email" name="to" id="to" class="form-control form-control-sm" required/>
+                </div>     
+                <div class="form-group">
+                    <label for="about">Objet :</label>
+                    <input type="text" name="about" id="about" class="form-control form-control-sm" required />
+                </div>
+                <div class="form-group">       
+                    <textarea id="msg" name="msg" rows="20" cols="50" class="form-control form-control-sm"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
     </body>
 </html>

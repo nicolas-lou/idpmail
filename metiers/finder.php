@@ -30,11 +30,13 @@ include ("../data/connexion.php");
             <p><a href="./home.php">Accueil</a></p>
             <p><a href="../data/deco.php">Deconnexion</a></p>
         <form role="search">
+        <div class="form-group">
             <legend>Rechercher un mail</legend> 
             <input type="search" id="maRecherche" name="q"
             placeholder="Recherchez dans vos mails"
-            aria-label="Rechercher parmi les emails">
-            <button>Rechercher</button>
+            aria-label="Rechercher parmi les emails" class="form-control form-control-sm">
+        </div>
+        <button class="btn btn-primary btn-sm">Rechercher</button>        
         </form>   
             <?php
             $login = $_SESSION['login'];
