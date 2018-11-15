@@ -19,11 +19,11 @@ include ("../database/connexion.php");
         <p><a href="/">Deconnexion</a></p>
     </div>
     <fieldset> 
-    <legend>Boite de reception</legend>    
+    <legend>Boite d'envoie'</legend>    
     <div id="boite_msg">
         <?php
         $login = $_SESSION['login'];
-        $mails=$connexion->query("SELECT sender,prenom,nom,idmail,objet,msg,recipient from outmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
+        $mails=$connexion->query("SELECT sender,prenom,nom,idmail,objet,msg,recipient from inmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
         $mails->setFetchMode(PDO::FETCH_OBJ);        
         foreach($mails as $row){            
             echo "<a href='/recus/msgs.php?id={$row->idmail}'>{$row->prenom} {$row->nom} {$row->objet}</a>";
