@@ -1,3 +1,6 @@
+<?php session_start();
+$id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +12,14 @@
     <script src="main.js"></script>
 </head>
 <body>
-<h1>Bonjour Nom Prénom</h1>
+<h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
 <div id="liens_nav_boite">
  <p><a href="/accueil/accueil.php">Accueil</a></p>
  <p><a href="/recus/boite.php">Boite de récéption</a></p>
  <p><a href="/">Deconnexion</a></p>
  </div>
  <div id="msgs_container">
- <?php include("mail.php"); ?>
+ <?php include("mail.php?id={$id}"); ?>
 </div>
 
 </body>
