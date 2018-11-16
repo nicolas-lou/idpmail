@@ -20,11 +20,12 @@ if(is_null($_SESSION['prenom'])){
     </head>
     <body>
     <div class="container">
-        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+        <h1><?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>        
         <div class="boutton_container">
             <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
             <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
         </div>
+        <h4 style="margin-bottom:0px;margin-top:40px;">Nouveau message</h4>
             <form method="post" action="./mailsender.php">                
                 <div class="form-group">
                     <label for="to">A :</label>   

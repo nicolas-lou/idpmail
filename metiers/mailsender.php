@@ -30,6 +30,6 @@ $stmt->bindValue(':recipientname', $nomDest." ".$prenomDest,PDO::PARAM_STR);
 $stmt->bindValue(':objet', $objet,PDO::PARAM_STR);
 $stmt->bindValue(':msg', $msg,PDO::PARAM_STR);
 $stmt->execute();
-header("Location: ./home.php");
+header("Location: ./sendingdone.php");
 };
 ?>

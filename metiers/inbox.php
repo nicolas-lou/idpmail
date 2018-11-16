@@ -22,7 +22,7 @@ include ("../data/connexion.php");
     </head>
     <body>
     <div class="container">
-        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+        <h1><?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
         <div class="boutton_container">
         <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
         <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>

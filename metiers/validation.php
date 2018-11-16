@@ -14,6 +14,6 @@ if (count($row)!=0){
     header("Location: ./home.php");
 }
 else{ 
-    header('location: ../index.php');}
+    header('location: ../index.php?l=false');}
      
 ?>

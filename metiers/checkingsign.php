@@ -9,6 +9,6 @@ $pass = $_POST['pass'];
 
 $connexion->exec("INSERT INTO users (nom,prenom,email,phone,login,password) VALUES ('$nom','$prenom','$email',$phone,$login,'$pass')");
 
-header("Location: ../index.php");
+header("Location: ./signcomplete.php");
 
 ?>
