@@ -32,16 +32,16 @@ include ("../data/connexion.php");
         <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
         <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
     </div>             
-        <form role="search">
-        <div class="form-group">
-            <legend>Rechercher un mail</legend> 
+        <form role="search" id="rechercher">
+        <h5>Rechercher un mail</h5> 
+        <div class="form-group">            
             <input type="search" id="maRecherche" name="q"
             placeholder="Recherchez dans vos mails"
             aria-label="Rechercher parmi les emails" class="form-control form-control-sm">
         </div>
         <button class="btn btn-primary btn-sm">Rechercher</button>        
         </form>
-        <table id="in_table" class="table table-striped table-bordered" style="width:70%">
+        <table id="in_tablefinder" class="table table-striped table-bordered" style="width:70%">
             <thead>
                 <tr>
                     <th>Etat</th>

@@ -29,7 +29,7 @@ include ("../data/connexion.php");
     </div>            
         <h3>Boite de reception</h3>
         <div class="box_container">
-            <table id="in_table" class="table table-striped table-bordered" style="width:100%">
+            <table id="in_table" class="table table-striped table-bordered" style="width:70%">
                 <thead>
                     <tr>
                         <th>Expediteur</th>

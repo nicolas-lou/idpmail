@@ -34,9 +34,13 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
             $login = $_SESSION['login'];
             $mail=$connexion->query("SELECT sender,objet,msg from inmail WHERE idmail like $id");
             $mail->setFetchMode(PDO::FETCH_OBJ);        
-            foreach($mail as $row){ 
-            echo "<h4>$row->objet</h4>";
-            echo "<p>$row->msg</p>";                   
+            foreach($mail as $row){
+            echo "<div>";
+            echo "<p>Expediteur: </p>";
+            echo "<p>Destinataire: </p>";
+            echo "<h5>Objet: {$row->objet}</h5>";
+            echo "<p>{$row->msg}</p>";
+            echo "</div>";                  
             };
         ?>
     </div>

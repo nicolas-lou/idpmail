@@ -25,7 +25,7 @@
                 <input type="password" name="pass" id="pass" class="form-control form-control-sm" required />
             </div>
             <button type="submit" class="btn btn-primary">Se connecter</button>
-            <a href="/metiers/signup.php">Création de compte.</a>
+            <a href="/metiers/signup.php">Création de compte</a>
         </form>
     </div>
     </body>
