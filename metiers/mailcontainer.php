@@ -32,15 +32,17 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
     </div>       
         <?php 
             $login = $_SESSION['login'];
-            $mail=$connexion->query("SELECT sender,objet,msg from inmail WHERE idmail like $id");
+            $mail=$connexion->query("SELECT sender,objet,msg,sendername,recipientname from inmail WHERE idmail like $id");
             $mail->setFetchMode(PDO::FETCH_OBJ);        
             foreach($mail as $row){
-            echo "<div>";
-            echo "<p>Expediteur: </p>";
-            echo "<p>Destinataire: </p>";
-            echo "<h5>Objet: {$row->objet}</h5>";
-            echo "<p>{$row->msg}</p>";
-            echo "</div>";                  
+            echo "<div class='card'>";
+            echo "<div class='card-body'>";
+            echo "<h4 class='card-title'>Objet: {$row->objet}</h4>";
+            echo "<h6 class='card-subtitle mb-2 text-muted'>Expediteur: {$row->sendername}</h6>";
+            echo "<h6 class='card-subtitle mb-2 text-muted'>Destinataire: {$row->recipientname} </h6>";
+            echo "<p class='card-text'>{$row->msg}</p>";
+            echo "</div>";
+            echo "</div>";                 
             };
         ?>
     </div>
