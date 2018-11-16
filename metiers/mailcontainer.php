@@ -23,6 +23,7 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
         <script src="../js/main.js"></script>
     </head>
     <body>
+    <div class="container">
         <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
         <p><a href="./home.php">Accueil</a></p>
         <p><a href="./inbox.php">Boite de récéption</a></p>
@@ -36,5 +37,6 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
             echo "<p>$row->msg</p>";                   
             };
         ?>
+    </div>
     </body>
 </html>

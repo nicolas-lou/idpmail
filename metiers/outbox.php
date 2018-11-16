@@ -21,17 +21,19 @@ if(is_null($_SESSION['prenom'])){
         <script src="../js/main.js"></script>
     </head>
     <body>
-        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <p><a href="./home.php">Accueil</a></p>
-            <p><a href="../data/deco.php">Deconnexion</a></p>
-        <h3>Boite d'envoie</h3>    
-            <?php
-            $login = $_SESSION['login'];
-            $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
-            $mails->setFetchMode(PDO::FETCH_OBJ);        
-            foreach($mails as $row){            
-            echo "<a href='./mailcontainer.php?id={$row->idmail}'>Destinataire {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
-            }        
-            ?>                        
+        <div class="container">
+            <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+                <p><a href="./home.php">Accueil</a></p>
+                <p><a href="../data/deco.php">Deconnexion</a></p>
+            <h3>Boite d'envoie</h3>    
+                <?php
+                $login = $_SESSION['login'];
+                $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE sender like $login and login=recipient ORDER BY idmail desc ");
+                $mails->setFetchMode(PDO::FETCH_OBJ);        
+                foreach($mails as $row){            
+                echo "<a href='./mailcontainer.php?id={$row->idmail}'>Destinataire {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
+                }        
+                ?>
+        </div>                        
     </body>
 </html>

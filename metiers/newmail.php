@@ -19,6 +19,7 @@ if(is_null($_SESSION['prenom'])){
         <script src="../js/index.js"></script>
     </head>
     <body>
+    <div class="container">
         <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
             <p><a href="./home.php">Accueil</a></p>
             <p><a href="../data/deco.php">Deconnexion</a></p>
@@ -36,5 +37,6 @@ if(is_null($_SESSION['prenom'])){
                 </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
+    </div>
     </body>
 </html>

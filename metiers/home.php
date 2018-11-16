@@ -33,11 +33,13 @@ if(is_null($_SESSION['prenom'])){
         <script src="../js/index.js"></script>
     </head>
     <body>
-        <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-        <a href="./newmail.php">Nouveau message</a>
-        <a href="./inbox.php">Boite de reception (<?php echo $nonlus ?>)</a>
-        <a href="./outbox.php">Messages envoyés (<?php echo $recus ?>)</a>
-        <a href="./finder.php">Recherche de mail</a>
-        <a href="../data/deco.php">Deconnexion</a> 
+        <div class="container">
+            <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
+            <a href="./newmail.php">Nouveau message</a>
+            <a href="./inbox.php">Boite de reception (<?php echo $nonlus ?>)</a>
+            <a href="./outbox.php">Messages envoyés (<?php echo $recus ?>)</a>
+            <a href="./finder.php">Recherche de mail</a>
+            <a href="../data/deco.php">Deconnexion</a>
+        </div>
     </body>
 </html>

@@ -12,8 +12,10 @@
         <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
         <script src="../js/main.js"></script>
     </head>
-    <body>    
+    <body>
+    <div class="container">    
         <h3>Création de compte</h3>
         <p>Votre compte a bien été créé. <a href="../index.php">retour à la page d'authentification</a></p>
+    </div>
     </body>
 </html>

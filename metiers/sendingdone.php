@@ -13,7 +13,9 @@
         <script src="../js/main.js"></script>
     </head>
     <body>
+    <div class="container">
         <h3>Envoie de message</h3>
-        <p>Message envoyé !  <a href="/home.php">retour à la page d'accueil</a></p>    
+        <p>Message envoyé !  <a href="/home.php">retour à la page d'accueil</a></p>
+    </div>   
     </body>
 </html>

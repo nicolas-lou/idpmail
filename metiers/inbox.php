@@ -21,6 +21,7 @@ include ("../data/connexion.php");
         <script src="../js/main.js"></script>
     </head>
     <body>
+    <div class="container">
         <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
             <p><a href="./home.php">Accueil</a></p>
             <p><a href="../data/deco.php">Deconnexion</a></p>
@@ -32,6 +33,7 @@ include ("../data/connexion.php");
             foreach($mails as $row){            
             echo "<a href='./mailcontainer.php?id={$row->idmail}'>Expediteur : {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
             }        
-            ?>            
+            ?>
+    </div>            
     </body>
 </html>

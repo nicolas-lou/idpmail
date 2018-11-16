@@ -13,6 +13,7 @@
 <script src="/js/index.js"></script>
 </head>
     <body>
+    <div class="container">
     <h1>Messagerie Full Stack</h1>
         <form method="post" action="/metiers/validation.php">
             <div class="form-group"> 
@@ -26,6 +27,7 @@
             <button type="submit" class="btn btn-primary">Se connecter</button>
             <a href="/metiers/signup.php">Création de compte.</a>
         </form>
+    </div>
     </body>
 </html>
 
