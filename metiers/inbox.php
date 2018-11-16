@@ -28,16 +28,37 @@ include ("../data/connexion.php");
         <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
     </div>            
         <h3>Boite de reception</h3>
-        <div class="box_container">    
-            <?php
-            $login = $_SESSION['login'];
-            $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE recipient like $login and login=sender ORDER BY idmail desc ");
-            $mails->setFetchMode(PDO::FETCH_OBJ);        
-            foreach($mails as $row){            
-            echo "<a href='./mailcontainer.php?id={$row->idmail}'>Expediteur : {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
-            }        
-            ?>
-        </div>
-    </div>            
+        <div class="box_container">
+            <table id="in_table" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Expediteur</th>
+                        <th>Mail</th>
+                        <th>Objet</th>                
+                    </tr>
+                </thead> 
+                <tbody>    
+                    <?php
+                    $login = $_SESSION['login'];
+                    $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE recipient like $login and login=sender ORDER BY idmail desc ");
+                    $mails->setFetchMode(PDO::FETCH_OBJ);        
+                    foreach($mails as $row){
+                    echo "<tr>";            
+                    echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->prenom} {$row->nom}</td>";
+                    echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->email}</td>";
+                    echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->objet}</td>";
+                    echo "</tr>"; 
+                    }        
+                    ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Expediteur</th>
+                        <th>Mail</th>
+                        <th>Objet</th>
+                    </tr>
+                </tfoot>
+            </table>        
+        </div>            
     </body>
 </html>

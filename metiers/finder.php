@@ -40,19 +40,45 @@ include ("../data/connexion.php");
             aria-label="Rechercher parmi les emails" class="form-control form-control-sm">
         </div>
         <button class="btn btn-primary btn-sm">Rechercher</button>        
-        </form>   
+        </form>
+        <table id="in_table" class="table table-striped table-bordered" style="width:70%">
+            <thead>
+                <tr>
+                    <th>Etat</th>
+                    <th>Personne</th>                    
+                    <th>Objet</th>                
+                </tr>
+            </thead> 
+            <tbody>   
             <?php
             $login = $_SESSION['login'];
             $mails=$connexion->query("select * from inmail WHERE (sender = $login or recipient = $login) and objet like '%{$recherche}%'");
             $mails->setFetchMode(PDO::FETCH_OBJ);        
                 foreach($mails as $row){
                     if($row->sender==$login){
-                        echo "<a href='./mailcontainer.php?id={$row->idmail}'>Destinataire : {$row->recipientname} Objet: {$row->objet}</a>";
+                        echo "<tr>";            
+                        echo "<td>Destinataire :</td>";
+                        echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->recipientname}</td>";                        
+                        echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->objet}</td>";
+                        echo "</tr>";                        
                     }else{
-                        echo "<a href='./mailcontainer.php?id={$row->idmail}'>Expediteur: {$row->sendername}  Objet: {$row->objet}</a>";
+                        echo "<tr>";            
+                        echo "<td>Expediteur :</td>";
+                        echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->sendername}</td>";                        
+                        echo "<td><a href='./mailcontainer.php?id={$row->idmail}'>{$row->objet}</td>";
+                        echo "</tr>"; 
                     }           
                 }        
             ?>
+            </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Etat</th>
+                        <th>Personne</th>                        
+                        <th>Objet</th>
+                    </tr>
+                </tfoot>
+        </table>
     </div>                    
     </body>
 </html>
