@@ -27,7 +27,8 @@ include ("../data/connexion.php");
         <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
         <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
     </div>            
-        <h3>Boite de reception</h3>    
+        <h3>Boite de reception</h3>
+        <div class="box_container">    
             <?php
             $login = $_SESSION['login'];
             $mails=$connexion->query("SELECT sender,prenom,nom,email,idmail,objet,msg,recipient from inmail,users WHERE recipient like $login and login=sender ORDER BY idmail desc ");
@@ -36,6 +37,7 @@ include ("../data/connexion.php");
             echo "<a href='./mailcontainer.php?id={$row->idmail}'>Expediteur : {$row->prenom} {$row->nom} ({$row->email}) Objet: {$row->objet}</a>";
             }        
             ?>
+        </div>
     </div>            
     </body>
 </html>
