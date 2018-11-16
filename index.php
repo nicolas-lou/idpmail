@@ -14,19 +14,21 @@
 </head>
     <body>
     <div class="container">
-    <h1>Messagerie Full Stack</h1>
-        <form method="post" action="/metiers/validation.php">
-            <div class="form-group"> 
-                <label for="login">Login :</label>
-                <input type="number" name="login" id="login" class="form-control form-control-sm" required />
-            </div>
-            <div class="form-group">                
-                <label for="pass">Mot de passe :</label>
-                <input type="password" name="pass" id="pass" class="form-control form-control-sm" required />
-            </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-            <a href="/metiers/signup.php">Création de compte</a>
-        </form>
+        <h1>IDP Full Stack  Mail</h1>
+        <div>
+            <form method="post" action="/metiers/validation.php" id="login_container">
+                <div class="form-group"> 
+                    <label for="login">Login :</label>
+                    <input type="number" name="login" id="login" class="form-control form-control-sm" required />
+                </div>
+                <div class="form-group">                
+                    <label for="pass">Mot de passe :</label>
+                    <input type="password" name="pass" id="pass" class="form-control form-control-sm" required />
+                </div>
+                <a href="/metiers/signup.php">Création de compte</a>
+                <button type="submit" class="btn btn-dark">Se connecter</button>                
+            </form>
+        </div>
     </div>
     </body>
 </html>
