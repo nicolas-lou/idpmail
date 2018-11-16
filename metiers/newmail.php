@@ -21,8 +21,10 @@ if(is_null($_SESSION['prenom'])){
     <body>
     <div class="container">
         <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <p><a href="./home.php">Accueil</a></p>
-            <p><a href="../data/deco.php">Deconnexion</a></p>
+        <div class="boutton_container">
+            <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
+            <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
+        </div>
             <form method="post" action="./mailsender.php">                
                 <div class="form-group">
                     <label for="to">A :</label>   
@@ -33,7 +35,7 @@ if(is_null($_SESSION['prenom'])){
                     <input type="text" name="about" id="about" class="form-control form-control-sm" required />
                 </div>
                 <div class="form-group">       
-                    <textarea id="msg" name="msg" rows="20" cols="50" class="form-control form-control-sm"></textarea>
+                    <textarea id="msg" name="msg" rows="15" cols="40" class="form-control form-control-sm"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>

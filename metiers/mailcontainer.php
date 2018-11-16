@@ -25,9 +25,11 @@ $connexion->exec("UPDATE inmail SET lu=1 WHERE idmail={$id}");
     <body>
     <div class="container">
         <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-        <p><a href="./home.php">Accueil</a></p>
-        <p><a href="./inbox.php">Boite de récéption</a></p>
-        <p><a href="../data/deco.php">Deconnexion</a></p>
+        <div class="boutton_container">
+        <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
+        <button type="button" class="btn btn-dark"><a href="./inbox.php">Boite de récéption</a></button>
+        <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
+    </div>       
         <?php 
             $login = $_SESSION['login'];
             $mail=$connexion->query("SELECT sender,objet,msg from inmail WHERE idmail like $id");

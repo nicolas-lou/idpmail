@@ -28,8 +28,10 @@ include ("../data/connexion.php");
     <body>
     <div class="container">
         <h1><?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <p><a href="./home.php">Accueil</a></p>
-            <p><a href="../data/deco.php">Deconnexion</a></p>
+        <div class="boutton_container">
+        <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
+        <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
+    </div>             
         <form role="search">
         <div class="form-group">
             <legend>Rechercher un mail</legend> 

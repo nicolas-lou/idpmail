@@ -23,8 +23,10 @@ if(is_null($_SESSION['prenom'])){
     <body>
         <div class="container">
             <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-                <p><a href="./home.php">Accueil</a></p>
-                <p><a href="../data/deco.php">Deconnexion</a></p>
+            <div class="boutton_container">
+                <button type="button" class="btn btn-dark"><a href="./home.php">Accueil</a></button>             
+                <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
+            </div>
             <h3>Boite d'envoie</h3>    
                 <?php
                 $login = $_SESSION['login'];

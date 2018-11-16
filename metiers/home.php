@@ -35,11 +35,13 @@ if(is_null($_SESSION['prenom'])){
     <body>
         <div class="container">
             <h1>Bonjour <?php echo $_SESSION['prenom'];echo " ";echo $_SESSION['nom']; ?></h1>
-            <a href="./newmail.php">Nouveau message</a>
-            <a href="./inbox.php">Boite de reception (<?php echo $nonlus ?>)</a>
-            <a href="./outbox.php">Messages envoyés (<?php echo $recus ?>)</a>
-            <a href="./finder.php">Recherche de mail</a>
-            <a href="../data/deco.php">Deconnexion</a>
+        <div class="boutton_container">
+            <button type="button" class="btn btn-dark"><a href="./newmail.php">Nouveau message</a></button>
+            <button type="button" class="btn btn-dark"><a href="./inbox.php">Boite de reception (<?php echo $nonlus ?>)</a></button> 
+            <button type="button" class="btn btn-dark"><a href="./outbox.php">Messages envoyés (<?php echo $recus ?>)</a></button> 
+            <button type="button" class="btn btn-dark"><a href="./finder.php">Recherche de mail</a></button>             
+            <button type="button" class="btn btn-dark"><a href="../data/deco.php">Deconnexion</a></button>
+        </div>            
         </div>
     </body>
 </html>

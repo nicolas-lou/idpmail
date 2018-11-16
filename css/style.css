@@ -4,6 +4,25 @@
     justify-content: center;
 }
 h1,h2,h3{
-    width: 40%;
     margin: auto;
+    border: solid black;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+.boutton_container{
+    border: solid black;
+    flex-direction: row; 
+    justify-content: space-around;    
+    margin: auto;
+    align-items: center;
+
+}
+.boutton_container a {
+    text-decoration: none;
+    color:aliceblue;
+}
+.boutton_container a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: white;
+    
+  }
